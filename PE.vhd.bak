@@ -1,0 +1,94 @@
+LIBRARY IEEE;
+USE ieee.std_logic_1164.all;
+USE ieee.numeric_std.all;
+
+entity MAC is
+  port (mulit1, mulit2, part_in : in unsigned(7 downto 0);
+        macOut : out unsigned (7 downto 0)
+  ) ;
+end MAC;
+
+architecture behavioral of MAC is
+
+signal mulitResult : unsigned (7 downto 0);
+
+begin
+    mulitResult <= mulit1 * mulit2;
+    macOut <= mulitResult + part_in;
+
+end behavioral ; -- behavioral
+----------------------------------------------------------------
+LIBRARY IEEE;
+USE ieee.std_logic_1164.all;
+USE ieee.numeric_std.all;
+
+ENTITY D_FF IS
+PORT(D : IN UNSIGNED(7 DOWNTO 0);
+	reset, clock, ld: In STD_LOGIC;
+	Q : OUT UNSIGNED(7 DOWNTO 0));
+END D_FF;
+
+ARCHITECTURE Behavioral of D_FF IS
+BEGIN
+process(clock,ld)
+BEGIN 
+if (rising_edge(clock))then
+	if(reset = '1') then
+	Q <= "00000000";
+    END if;
+    if(ld = '1') then
+        Q<= D;
+	END if;
+	else NULL;
+END if;
+END process;
+END Behavioral;
+-------------------D flip flop---------------------------
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
+USE ieee.numeric_std.all;
+
+entity PE is
+  port (a_in, w_in, part_in : in unsigned(7 downto 0);
+        clock, reset, hardReset, ld, ld_w : in std_logic;
+        partialSum, a_out : out unsigned(7 downto 0)
+  ) ;
+end PE;
+
+architecture structral of PE is
+
+component D_FF 
+PORT(D : IN UNSIGNED(7 DOWNTO 0);
+	reset, clock ld: In STD_LOGIC;
+    Q : OUT UNSIGNED(7 DOWNTO 0));
+end component;
+
+component MAC is
+    port (mulit1, mulit2, part_in : in unsigned(7 downto 0);
+          macOut : out unsigned (7 downto 0)
+    ) ;
+end component;
+  
+
+signal wRegOut, multiOut, macOut : unsigned (7 downto 0);
+signal resetSig : std_logic;
+
+begin
+    resetSig <= reset OR hardReset;
+
+Wreg : D_ff
+PORT MAP(D => w_in, reset => hardReset, clock => clock, ld => ld_w, Q => wRegOut);
+--reset to hardreset to erase everything
+--only hard reset to erase w values 
+
+BigMAC : MAC 
+PORT MAP( mulit1 => wRegOut, mulit2 => a_in, part_in => part_in, macOut => macOut);
+-- mac component
+
+A : D_ff
+PORT MAP(D => a_in, reset => resetSig, clock => clock, ld => ld, Q => a_out);
+
+Y : D_ff
+PORT MAP(D => macOut, reset => resetSig, clock => clock, ld => ld, Q => partialSum);
+
+end structral ; -- structral

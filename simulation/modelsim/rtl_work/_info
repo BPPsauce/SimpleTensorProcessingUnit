@@ -1,0 +1,447 @@
+m255
+K4
+z2
+!s11e vcom 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/JoLi/SFU/FALL 2020 course/ensc 252 real/final project/ShutThePugUp/simulation/modelsim
+Eau
+Z1 w1607401004
+Z2 DPx4 work 16 systolic_package 0 22 9iTHGiRXWP<OmGkaN?3hz3
+Z3 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
+Z4 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z5 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+!i122 4
+R0
+Z6 8D:/JoLi/SFU/FALL 2020 course/ensc 252 real/final project/ShutThePugUp/AU.vhd
+Z7 FD:/JoLi/SFU/FALL 2020 course/ensc 252 real/final project/ShutThePugUp/AU.vhd
+l0
+L18 1
+V;T7;i?U=Cgb;CTB0ZFd6T2
+!s100 mV8L<@hbN?M1ke6iZU1le1
+Z8 OV;C;2020.1;71
+31
+Z9 !s110 1607401444
+!i10b 1
+Z10 !s108 1607401444.000000
+Z11 !s90 -reportprogress|300|-93|-work|work|D:/JoLi/SFU/FALL 2020 course/ensc 252 real/final project/ShutThePugUp/AU.vhd|
+Z12 !s107 D:/JoLi/SFU/FALL 2020 course/ensc 252 real/final project/ShutThePugUp/AU.vhd|
+!i113 1
+Z13 o-93 -work work
+Z14 tExplicit 1 CvgOpt 0
+Astructural
+R2
+R3
+R4
+R5
+DEx4 work 2 au 0 22 ;T7;i?U=Cgb;CTB0ZFd6T2
+!i122 4
+l34
+L28 56
+V^EQh@kCoLL:P3f[C?Bn;I1
+!s100 1UQnY9jOc@I0dnnLPP9K:0
+R8
+31
+R9
+!i10b 1
+R10
+R11
+R12
+!i113 1
+R13
+R14
+Ed_ff
+Z15 w1607401048
+R3
+R4
+R5
+!i122 2
+R0
+Z16 8D:/JoLi/SFU/FALL 2020 course/ensc 252 real/final project/ShutThePugUp/PE.vhd
+Z17 FD:/JoLi/SFU/FALL 2020 course/ensc 252 real/final project/ShutThePugUp/PE.vhd
+l0
+L37 1
+VMN]cd?b62CN]D^Jl^cF7U0
+!s100 IKzmA3>TfaLM47K]8Kaaa3
+R8
+31
+R9
+!i10b 1
+Z18 !s108 1607401443.000000
+Z19 !s90 -reportprogress|300|-93|-work|work|D:/JoLi/SFU/FALL 2020 course/ensc 252 real/final project/ShutThePugUp/PE.vhd|
+Z20 !s107 D:/JoLi/SFU/FALL 2020 course/ensc 252 real/final project/ShutThePugUp/PE.vhd|
+!i113 1
+R13
+R14
+Abehavioral
+R3
+R4
+R5
+DEx4 work 4 d_ff 0 22 MN]cd?b62CN]D^Jl^cF7U0
+!i122 2
+l44
+L43 13
+V:^LKG;j@hE0^BFA2SQoR51
+!s100 FAG^gSb>Uo[7DD2Fk?oc41
+R8
+31
+R9
+!i10b 1
+R18
+R19
+R20
+!i113 1
+R13
+R14
+Emac
+R15
+R3
+R4
+R5
+!i122 2
+R0
+R16
+R17
+l0
+L5 1
+VD@A]6XRF8meQVdR:Fi]`f0
+!s100 MFjjlG8B2c^FzJHo;PF8Q0
+R8
+31
+R9
+!i10b 1
+R18
+R19
+R20
+!i113 1
+R13
+R14
+Abehavioral
+R3
+R4
+R5
+DEx4 work 3 mac 0 22 D@A]6XRF8meQVdR:Fi]`f0
+!i122 2
+l19
+L11 21
+VfJ]QM:iCUXzKJM>VSgQO12
+!s100 ifPLEDJoaQj:nA35Y8kEP2
+R8
+31
+R9
+!i10b 1
+R18
+R19
+R20
+!i113 1
+R13
+R14
+Emmu
+Z21 w1607401140
+R3
+R4
+R5
+!i122 3
+R0
+Z22 8D:/JoLi/SFU/FALL 2020 course/ensc 252 real/final project/ShutThePugUp/MMU.vhd
+Z23 FD:/JoLi/SFU/FALL 2020 course/ensc 252 real/final project/ShutThePugUp/MMU.vhd
+l0
+L5 1
+VlN?08kdP?gboD^Z>`kUXY3
+!s100 9ZidFnj6`5?RXBAm:;C@U3
+R8
+31
+R9
+!i10b 1
+R10
+Z24 !s90 -reportprogress|300|-93|-work|work|D:/JoLi/SFU/FALL 2020 course/ensc 252 real/final project/ShutThePugUp/MMU.vhd|
+Z25 !s107 D:/JoLi/SFU/FALL 2020 course/ensc 252 real/final project/ShutThePugUp/MMU.vhd|
+!i113 1
+R13
+R14
+Aarch
+R3
+R4
+R5
+DEx4 work 3 mmu 0 22 lN?08kdP?gboD^Z>`kUXY3
+!i122 3
+l28
+L14 115
+VfSf`F3lLXN;ie3T2K>I@e2
+!s100 P?nZI9OTX`8:PLEmUjIcU1
+R8
+31
+R9
+!i10b 1
+R10
+R24
+R25
+!i113 1
+R13
+R14
+Epe
+R15
+R3
+R4
+R5
+!i122 2
+R0
+R16
+R17
+l0
+L61 1
+VfP8L?<TnT?oA]mQ_0K4ig2
+!s100 JO:CRHe3m_i`VZD2G[LSh3
+R8
+31
+R9
+!i10b 1
+R18
+R19
+R20
+!i113 1
+R13
+R14
+Astructral
+R3
+R4
+R5
+DEx4 work 2 pe 0 22 fP8L?<TnT?oA]mQ_0K4ig2
+!i122 2
+l85
+L68 36
+V6>4zC4fQhWK0=KLklf4Qn3
+!s100 hU8oT<kBJI2zCU_nhM9fL1
+R8
+31
+R9
+!i10b 1
+R18
+R19
+R20
+!i113 1
+R13
+R14
+Estpu
+Z26 w1607401406
+R2
+R3
+R4
+R5
+!i122 5
+R0
+Z27 8D:/JoLi/SFU/FALL 2020 course/ensc 252 real/final project/ShutThePugUp/STPU.vhd
+Z28 FD:/JoLi/SFU/FALL 2020 course/ensc 252 real/final project/ShutThePugUp/STPU.vhd
+l0
+L7 1
+V?[H;gz4FnnScYdDW8b6nG0
+!s100 ?dZ@>7TF8=gBd>^dJ^MaE2
+R8
+31
+R9
+!i10b 1
+R10
+Z29 !s90 -reportprogress|300|-93|-work|work|D:/JoLi/SFU/FALL 2020 course/ensc 252 real/final project/ShutThePugUp/STPU.vhd|
+Z30 !s107 D:/JoLi/SFU/FALL 2020 course/ensc 252 real/final project/ShutThePugUp/STPU.vhd|
+!i113 1
+R13
+R14
+Astruc
+R2
+R3
+R4
+R5
+DEx4 work 4 stpu 0 22 ?[H;gz4FnnScYdDW8b6nG0
+!i122 5
+l115
+L20 345
+V5`P3RBB7JdnnCImac2mz=2
+!s100 Yfe<SJ5L0Ph^3<;1QHKjR1
+R8
+31
+R9
+!i10b 1
+R10
+R29
+R30
+!i113 1
+R13
+R14
+Psystolic_package
+R3
+R4
+R5
+!i122 4
+R1
+R0
+R6
+R7
+l0
+L4 1
+V9iTHGiRXWP<OmGkaN?3hz3
+!s100 EKR0K3CbD1G?VIk7RTJB11
+R8
+31
+R9
+!i10b 1
+R10
+R11
+R12
+!i113 1
+R13
+R14
+Bbody
+R2
+R3
+R4
+R5
+!i122 4
+l0
+L8 1
+VYc4a__P7m^k@M1dJ7jZ;J2
+!s100 omY2;dkVnRFG5XYdfbzOZ3
+R8
+31
+R9
+!i10b 1
+R10
+R11
+R12
+!i113 1
+R13
+R14
+Etb_stpu
+Z31 w1607396507
+R2
+R3
+R4
+R5
+!i122 6
+R0
+Z32 8D:/JoLi/SFU/FALL 2020 course/ensc 252 real/final project/ShutThePugUp/tb_STPU.vhd
+Z33 FD:/JoLi/SFU/FALL 2020 course/ensc 252 real/final project/ShutThePugUp/tb_STPU.vhd
+l0
+L7 1
+VZZAa2]8fe>E^G_I@NPEkf2
+!s100 4Bl3ILL6T?GobYBlBen4:3
+R8
+32
+Z34 !s110 1607401454
+!i10b 1
+Z35 !s108 1607401454.000000
+Z36 !s90 -reportprogress|300|-work|work|D:/JoLi/SFU/FALL 2020 course/ensc 252 real/final project/ShutThePugUp/tb_STPU.vhd|
+!s107 D:/JoLi/SFU/FALL 2020 course/ensc 252 real/final project/ShutThePugUp/tb_STPU.vhd|
+!i113 1
+Z37 o-work work
+R14
+Atest
+R2
+R3
+R4
+R5
+DEx4 work 7 tb_stpu 0 22 ZZAa2]8fe>E^G_I@NPEkf2
+!i122 6
+l40
+L20 68
+V8o<Pf^fa>TY[^Uz789QB?0
+!s100 7V;oPW;MKIUzZk_6b9IUo2
+R8
+32
+R34
+!i10b 1
+R35
+R36
+Z38 !s107 D:/JoLi/SFU/FALL 2020 course/ensc 252 real/final project/ShutThePugUp/tb_STPU.vhd|
+!i113 1
+R37
+R14
+Euram
+Z39 w1606805158
+Z40 DPx9 altera_mf 20 altera_mf_components 0 22 HVLmIbRl@QhXfWVOmhK<j1
+R4
+R5
+!i122 1
+R0
+Z41 8D:/JoLi/SFU/FALL 2020 course/ensc 252 real/final project/ShutThePugUp/URAM.vhd
+Z42 FD:/JoLi/SFU/FALL 2020 course/ensc 252 real/final project/ShutThePugUp/URAM.vhd
+l0
+Z43 L43 1
+VCTXG1=92@k2j2HnUmTboS2
+!s100 @6ZN<APc4>;7jHJmLRO?o3
+R8
+31
+Z44 !s110 1607401443
+!i10b 1
+R18
+Z45 !s90 -reportprogress|300|-93|-work|work|D:/JoLi/SFU/FALL 2020 course/ensc 252 real/final project/ShutThePugUp/URAM.vhd|
+Z46 !s107 D:/JoLi/SFU/FALL 2020 course/ensc 252 real/final project/ShutThePugUp/URAM.vhd|
+!i113 1
+R13
+R14
+Asyn
+R40
+R4
+R5
+DEx4 work 4 uram 0 22 CTXG1=92@k2j2HnUmTboS2
+!i122 1
+l61
+Z47 L57 37
+V1mXc]]A789PlAU:jcj;181
+!s100 c[MMAN_0B]@Q<<ndFZFNR3
+R8
+31
+R44
+!i10b 1
+R18
+R45
+R46
+!i113 1
+R13
+R14
+Ewram
+Z48 w1606804855
+R40
+R4
+R5
+!i122 0
+R0
+Z49 8D:/JoLi/SFU/FALL 2020 course/ensc 252 real/final project/ShutThePugUp/WRAM.vhd
+Z50 FD:/JoLi/SFU/FALL 2020 course/ensc 252 real/final project/ShutThePugUp/WRAM.vhd
+l0
+R43
+VZ6MK8R`X1N[L8Oi86LmSJ3
+!s100 JoodaSi`X?ceX0RcZZ]To0
+R8
+31
+R44
+!i10b 1
+R18
+Z51 !s90 -reportprogress|300|-93|-work|work|D:/JoLi/SFU/FALL 2020 course/ensc 252 real/final project/ShutThePugUp/WRAM.vhd|
+Z52 !s107 D:/JoLi/SFU/FALL 2020 course/ensc 252 real/final project/ShutThePugUp/WRAM.vhd|
+!i113 1
+R13
+R14
+Asyn
+R40
+R4
+R5
+DEx4 work 4 wram 0 22 Z6MK8R`X1N[L8Oi86LmSJ3
+!i122 0
+l61
+R47
+V^afzjgY:0d5BINek[Fck^1
+!s100 zGfc`4@K8]IAfOWYWB?Rb3
+R8
+31
+R44
+!i10b 1
+R18
+R51
+R52
+!i113 1
+R13
+R14

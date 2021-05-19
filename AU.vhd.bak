@@ -1,0 +1,39 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.all;
+USE ieee.numeric_std.all;
+
+package systolic_package is
+
+CONSTANT N : INTEGER := 8;
+	TYPE bus_width IS ARRAY (0 to 2) OF UNSIGNED(N-1 DOWNTO 0);
+end package;
+
+LIBRARY IEEE;
+USE ieee.std_logic_1164.all;
+USE ieee.numeric_std.all;
+use work.systolic_package.all;
+
+entity AU is
+  port (
+    clock, reset, hardReset, stall : in std_logic;
+    y0, y1, y2 : in unsigned (7 downto 0);
+    row0, row1, row2 : out bus_width (7 downto 0)(2);
+    done : out std_logic
+  ) ;
+end AU;
+
+architecture structural of AU is
+
+begin
+    row0 <= y0(bus_width);
+    row1 <= y1(bus_width);
+    row2 <= y2(bus_width);
+
+    process(bus_width) is 
+    begin 
+    if bus_width = '2';
+    done = '1';
+    end if;
+    end process;
+
+end structural ; -- structural

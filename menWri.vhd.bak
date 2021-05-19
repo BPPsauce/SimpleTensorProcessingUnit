@@ -1,0 +1,117 @@
+LIBRARY IEEE;
+USE ieee.std_logic_1164.all;
+USE ieee.numeric_std.all;
+
+LIBRARY altera_mf;
+USE altera_mf.altera_mf_components.all;
+
+entity menWri is
+  port (
+    clock, aclr, wren : in std_logic;
+    w : in unsigned (23 downto 0);
+    a0, a1, a2 : in unsigned (7 downto 0)
+  ) ;
+end menWri;
+
+architecture stru of menWri is
+component URAM is 
+PORT(aclr		: IN STD_LOGIC  := '0';
+    address		: IN STD_LOGIC_VECTOR (1 DOWNTO 0);
+    clock		: IN STD_LOGIC  := '1';
+    data		: IN STD_LOGIC_VECTOR (7 DOWNTO 0);
+    rden		: IN STD_LOGIC  := '1';
+    wren		: IN STD_LOGIC ;
+    q		: OUT STD_LOGIC_VECTOR (7 DOWNTO 0)
+    );
+end component;
+    
+component WRAM is 
+PORT(aclr		: IN STD_LOGIC  := '0';
+    address		: IN STD_LOGIC_VECTOR (1 DOWNTO 0);
+    clock		: IN STD_LOGIC  := '1';
+    data		: IN STD_LOGIC_VECTOR (23 DOWNTO 0);
+    rden		: IN STD_LOGIC  := '1';
+    wren		: IN STD_LOGIC ;
+    q		: OUT STD_LOGIC_VECTOR (23 DOWNTO 0)
+    );
+end component;
+
+    signal address : std_logic_vector(1 downto 0);
+    signal VdataToU0, VdataToU1, VdataToU2 : std_logic_vector (7 downto 0);
+    signal dataToW : unsigned (23 to 0);
+    type dataWritoRAMs is (add_01, add_10, add_11, add_00);
+    signal dataWriting : dataWritoRAMs;
+    signal VUout0, VUout1, VUout2 : std_logic_vector(7 downto 0);
+    signal Uout0, Uout1, Uout2 : UNSIGNED (7 downto 0);
+    signal VWout : std_logic_vector(23 downto 0);
+    signal Wout : UNSIGNED (23 downto 0);
+
+begin
+    Uout0 <= UNSIGNED(VUout0);
+    Uout1 <= UNSIGNED(VUout1);
+    Uout2 <= UNSIGNED(VUout2);
+    wOUT <= UNSIGNED(VWout);
+
+    process (clock) is 
+        begin
+            if rising_edge(clock) then
+                if wren = '1' then
+                    dataWriting <= add_00;
+                    else NULL;
+                    end if;
+
+                    case dataWriting is
+                        when add_01 =>
+                        address <= "01";
+                        VdataToW <= std_logic_vector(w);
+                        VdataToU0 <= std_logic_vector(a0);
+                        VdataToU1 <= std_logic_vector(a1);
+                        VdataToU2 <= std_logic_vector(a2);
+                        dataWriting <= add_10;
+
+                        when add_10 =>
+                        address <= "10";
+                        VdataToW <= std_logic_vector(w);
+                        VdataToU0 <= std_logic_vector(a0);
+                        VdataToU1 <= std_logic_vector(a1);
+                        VdataToU2 <= std_logic_vector(a2);
+                        dataWriting <= add_11;
+
+                        when add_11 =>
+                        address <= "11";
+                        VdataToW <= std_logic_vector(w);
+                        VdataToU0 <= std_logic_vector(a0);
+                        VdataToU1 <= std_logic_vector(a1);
+                        VdataToU2 <= std_logic_vector(a2);
+                        dataWriting <= add_00;
+
+                        when add_00 =>
+                        address <= "00";
+                        VdataToW <= "000000000000000000000000";
+                        VdataToU0 <= "00000000";
+                        VdataToU1 <= "00000000";
+                        VdataToU2 <= "00000000";
+                        dataWriting <= add_11;
+                    end case;
+                end if;
+            end process;
+
+
+
+W : WRAM 
+    PORT MAP(aclr => aclr, address => address, clock => clock, data => VdataToW,
+             rden => rden, wren => wren, q => VWout);
+
+U0 : URAM
+    PORT MAP(aclr => aclr, address => addressl, clock => clock, data => VdataToU0, 
+             rden => rden, wren => wren, q => VUout0);
+            
+U1 : URAM
+    PORT MAP(aclr => aclr, address => address, clock => clock, data => VdataToU1,
+            rden => rden, wren => wren, q => VUout1);
+            
+U2 : URAM
+    PORT MAP(aclr => aclr, address => address, clock => clock, data => VdataToU2,
+            rden => rden, wren => wren, q => VUout2);
+
+end stru ; --menWri

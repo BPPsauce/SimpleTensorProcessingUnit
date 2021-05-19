@@ -1,0 +1,77 @@
+LIBRARY IEEE;
+USE ieee.std_logic_1164.all;
+USE ieee.numeric_std.all;
+
+entity tb_MMU is
+    port (
+        clock, reset, hardReset, ld, ld_w, stall : std_logic;
+        a0, a1, a2 : in unsigned (7 downto 0);
+        w0, w1, w2 : in unsigned (7 downto 0);
+        y0, y1, y2 : out unsigned (7 downto 0)
+      ) ;
+end tb_MMU;
+
+architecture test of tb_MMU is
+component MMU is
+        port (
+          clock, reset, hardReset, ld, ld_w, stall : std_logic;
+          a0, a1, a2 : in unsigned (7 downto 0);
+          w0, w1, w2 : in unsigned (7 downto 0);
+          y0, y1, y2 : out unsigned (7 downto 0)
+        ) ;
+end component;
+
+    signal ld_wsig : std_logic;
+    signal a0sig, a1sig, a2sig : unsigned (7 downto 0);
+    signal w0sig, w1sig, w2sig : unsigned (7 downto 0);
+    signal clocksig : std_logic := '1';
+    constant period : time := 15 ns;
+    signal stallsig, resetsig, ld_sig, HRsig : std_logic;
+    
+    begin 
+    DUT : MMU
+    port map(clock => clocksig, reset => resetsig, hardReset => HRsig,
+            stall => stallsig, a0 => a0sig, a1 => a1sig, a2 => a2sig,
+            w0 => w0sig, w1 => w1sig, w2 => w2sig);
+    clocksig <= not clocksig after period;
+
+    process is
+        begin
+
+            a0sig <= "00000001";
+            a1sig <= "00000001";
+            a2sig <= "00000001";
+            w0sig <= "00000001";
+            w1sig <= "00000001";
+            w2sig <= "00000001";
+            wait for 20 ns;
+
+            id_wsing = '1';--getting out of idle
+            a0sig <= "00000001";
+            a1sig <= "00000001";
+            a2sig <= "00000001";
+            w0sig <= "00000001";
+            w1sig <= "00000001";
+            w2sig <= "00000001";
+            wait for 20 ns;
+
+            a0sig <= "10000001";
+            a1sig <= "01000001";
+            a2sig <= "00100001";
+            w0sig <= "10001111";
+            w1sig <= "10000001";
+            w2sig <= "11111001";
+            wait for 20 ns;
+
+            a0sig <= "11110001";
+            a1sig <= "01001111";
+            a2sig <= "00100101";
+            w0sig <= "10001111";
+            w1sig <= "10000001";
+            w2sig <= "01111111";
+            wait for 20 ns;
+
+            wait;
+            end process;
+
+end test ; -- tb_MMU

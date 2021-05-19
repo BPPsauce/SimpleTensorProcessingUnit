@@ -1,0 +1,133 @@
+--ShutThePugUp
+LIBRARY IEEE;
+USE ieee.std_logic_1164.all;
+USE ieee.numeric_std.all;
+use work.systolic_package.all;
+
+entity STPU is
+  port (
+    clock : in std_logic;
+    reset, hardReset : in std_logic;
+    setUp, GO, stall : in std_logic;
+    w_in : in unsigned (23 downto 0);
+    a_in : in unsigned (23 downto 0);
+    --a0_in, a1_in, a2_in : in unsigned (7 downto 0);
+    done : out std_logic;
+    row0, row1, row2 : out bus_width
+  ) ;
+end STPU;
+
+architecture struc of STPU is
+component URAM is --need 3
+PORT(aclr		: IN STD_LOGIC  := '0';
+	address		: IN STD_LOGIC_VECTOR (1 DOWNTO 0);
+	clock		: IN STD_LOGIC  := '1';
+	data		: IN STD_LOGIC_VECTOR (7 DOWNTO 0);
+	rden		: IN STD_LOGIC  := '1';
+	wren		: IN STD_LOGIC ;
+	q		: OUT STD_LOGIC_VECTOR (7 DOWNTO 0)
+    );
+end component;
+
+component WRAM is -- 1
+PORT(aclr		: IN STD_LOGIC  := '0';
+	address		: IN STD_LOGIC_VECTOR (1 DOWNTO 0);
+	clock		: IN STD_LOGIC  := '1';
+	data		: IN STD_LOGIC_VECTOR (23 DOWNTO 0);
+	rden		: IN STD_LOGIC  := '1';
+	wren		: IN STD_LOGIC ;
+	q		: OUT STD_LOGIC_VECTOR (23 DOWNTO 0)
+	);
+end component;
+
+component MMU is 
+port (
+    clock, reset, hardReset, ld, ld_w, stall : std_logic;
+    a0, a1, a2 : in unsigned (7 downto 0);
+    w0, w1, w2 : in unsigned (7 downto 0);
+    y0, y1, y2 : out unsigned (7 downto 0)
+  ) ;
+end component;
+
+component AU is 
+port (
+    clock, reset, hardReset, stall : in std_logic;
+    y0, y1, y2 : in unsigned (7 downto 0);
+    row0, row1, row2 : out bus_width;
+    done : out std_logic
+  ) ;
+end component;
+
+component menWri is 
+port (
+    clock, aclr, wren : in std_logic;
+    w : in unsigned (23 downto 0);
+    a0, a1, a2 : in unsigned (7 downto 0)
+  ) ;
+end component;
+----------------------------------------------------------------------------------------
+type workingStatus is (idle, settingUp, Computting, receving, done_receving);
+-- idle when nothing is being done, setUp can break it
+-- settingup when setUp is pressed, memory write and read to w.
+-- computting when GO is pressed, feature matrix loads, MMU process the calculation
+-- receving when a33 is pushed into the MMU, first result will show up
+-- done receving when all rows are collectted. done
+signal STPUstate : workingStatus;
+
+type a_loading is (idle, step1, step2, step3, step4, step5);
+--need to write an appendix for it
+signal a_loading_state : a_loading;
+
+    signal WrRAMs, RdRAMs : std_logic;
+    signal addressA0, addressA1, addressA2, addressW0 : std_logic_vector (1 downto 0);
+    signal a_load, w_load : std_logic; -- ld, ld_w
+    signal pause : std_logic -- stall
+    signal emptyPS0, emptyPS1, emptyPS2 : unsigned (7 downto 0);
+
+    signal w0_in, w1_in, w2_in : unsigned (7 downto 0); --splitted w
+    signal W_in_RAM : std_logic_vector (23 downto 0);
+    signal w_out_untouched : std_logic_vector (23 downto 0); -- striagt from the WRAM
+    -- input a into URAMs
+    signal a0_in, a1_in, a2_in : std_logic_vector (7 downto 0); -- need to split the a_in
+    -- output from URAMs
+    signal a0_out, a1_out, a2_out : std_logic_vector (7 downto 0);
+    signal a0_out_UN, a0_out_UN, a0_out_UN : unsigned (7 downto 0);
+    --------------------------------y0y1y2----------------------------
+    signal MMU_out0, MMU_out1, MMU_out2 : unsigned (7 downto 0);
+    signal aclr : std_logic;
+
+----------------------------------------------------------------------------------------
+begin
+-----------------------------------------PORT MAP---------------------------------------
+
+------------------------------------------RAMS------------------------------------------
+WeightRAM : WRAM 
+PORT MAP(aclr => aclr, address => addressW0, clock => clock, data => W_in_RAM,
+        rden => RdRAMs, wren => WrRAMs, q => w_out_untouched);
+
+U0 : URAM
+PORT MAP(aclr => aclr, address => addressA0, clock => clock, data => a0_in, 
+        rden => RdRAMs, wren => WrRAMs, q => a0_out);
+
+U1 : URAM
+PORT MAP(aclr => aclr, address => addressA1, clock => clock, data => a1_in,
+        rden => RdRAMs, wren => WrRAMs, q => a1_out);
+
+U2 : URAM
+PORT MAP(aclr => aclr, address => addressA2, clock => clock, data => a2_in,
+        rden => RdRAMs, wren => WrRAMs, q => a2_out);
+-------------------------------------------MMU-----------------------------------------
+MatrixShut : MMU
+PORT MAP(clock => clock, reset => reset, hardReset => hardReset, ld => a_load,
+        ld_w => w_load, stall => pause,
+        a0 => a0_out_UN, a1 => a1_out_UN, a2 => a2_out_UN, 
+        w0 => w0_in, w1 => w1_in, w2 => w2_in,
+        y0 => MMU_out0, y1 => MMU_out1, y2 => MMU_out2);
+-------------------------------------Activation Unit------------------------------------
+ActiveAir : AU
+PORT MAP(clock => clock, reset => reset, hardReset => hardReset, stall => pause,
+        y0 => MMU_out0, y1 => MMU_out1, y2 => MMU_out2,
+        row0 => row0, row1 => row1, row2 => row2,
+        done => done);
+----------------------------------------------------------------------------------------
+end struc ; --STPU

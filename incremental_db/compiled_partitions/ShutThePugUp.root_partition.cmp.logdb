@@ -1,0 +1,11 @@
+v1
+DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,PE:PE3|MAC:BigMAC|lpm_mult:Mult0|mult_aat:auto_generated|mac_out2,
+DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,PE:PE2|MAC:BigMAC|lpm_mult:Mult0|mult_aat:auto_generated|mac_out2,
+DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,PE:PE1|MAC:BigMAC|lpm_mult:Mult0|mult_aat:auto_generated|mac_out2,
+DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,PE:PE6|MAC:BigMAC|lpm_mult:Mult0|mult_aat:auto_generated|mac_out2,
+DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,PE:PE5|MAC:BigMAC|lpm_mult:Mult0|mult_aat:auto_generated|mac_out2,
+DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,PE:PE4|MAC:BigMAC|lpm_mult:Mult0|mult_aat:auto_generated|mac_out2,
+DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,PE:PE9|MAC:BigMAC|lpm_mult:Mult0|mult_aat:auto_generated|mac_out2,
+DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,PE:PE8|MAC:BigMAC|lpm_mult:Mult0|mult_aat:auto_generated|mac_out2,
+DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,PE:PE7|MAC:BigMAC|lpm_mult:Mult0|mult_aat:auto_generated|mac_out2,
+PORT_SWAPPING,PORT_SWAPPING_FINISHED,PE:PE7|MAC:BigMAC|lpm_mult:Mult0|mult_aat:auto_generated|mac_mult1,

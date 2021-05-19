@@ -1,0 +1,78 @@
+LIBRARY IEEE;
+USE ieee.std_logic_1164.all;
+USE ieee.numeric_std.all;
+
+entity MMU is
+  port (
+    clock, reset, hardReset, ld, ld_w, stall : std_logic;
+    a0, a1, a2 : in unsigned (7 downto 0);
+    w0, w1, w2 : in unsigned (23 downto 0);
+    y0, y1, y2 : in unsigned (7 downto 0)
+  ) ;
+end MMU;
+
+architecture arch of MMU is
+component PE is 
+    port (a_in, w_in, part_in : in unsigned(7 downto 0);
+          clock, reset, hardReset, ld, ld_w : in std_logic;
+          partialSum, a_out : out unsigned(7 downto 0)
+    ) ;
+end component;
+
+    type t_state is (idle, col0, col1, col2);
+    signal state : t_state;
+    signal PS1 ,PS2, PS3, PS4, PS5, PS6, PS7, PS8, PS9 :unsigned(7 downto 0);
+    signal aout1, aout2, aout3, aout4, aout5, aout6, aout7, aout8, aout9: unsigned(7 downto 0);
+    signal w11, w12, w13, w21, w22, w23, w31, w32, w33 :unsigned(7 downto 0);
+
+
+PE1: PE 
+PORT MAP(a_in => a_0, w_in => w11, part_in => part_in,
+        clock => clock, reset => reset, hardReset => hardReset,
+        ld => ld, ld_w => ld_w, partialSum => PS1, a_out => aout1);
+
+PE2: PE 
+PORT MAP(a_in => aout1, w_in => w21, part_in => part_in,
+        clock => clock, reset => reset, hardReset => hardReset,
+        ld => ld, ld_w => ld_w, partialSum => PS2, a_out => aout2);
+
+PE3: PE 
+PORT MAP(a_in => aout2, w_in => w31, part_in => part_in,
+        clock => clock, reset => reset, hardReset => hardReset,
+        ld => ld, ld_w => ld_w, partialSum => PS3, a_out => aout3);
+------------------------------------------------------------------
+PE4: PE 
+PORT MAP(a_in => a_1, w_in => w12, part_in => PS1,
+        clock => clock, reset => reset, hardReset => hardReset,
+        ld => ld, ld_w => ld_w, partialSum => PS4, a_out => aout4);
+
+PE5: PE 
+PORT MAP(a_in => aout4, w_in => w22, part_in => PS2,
+        clock => clock, reset => reset, hardReset => hardReset,
+        ld => ld, ld_w => ld_w, partialSum => PS5, a_out => aout5);
+
+PE6: PE 
+PORT MAP(a_in => aout5, w_in => w32, part_in => PS3,
+        clock => clock, reset => reset, hardReset => hardReset,
+        ld => ld, ld_w => ld_w, partialSum => PS6, a_out => aout6);
+--------------------------------------------------------------------
+PE7: PE 
+PORT MAP(a_in => a_2, w_in => w13, part_in => PS4,
+        clock => clock, reset => reset, hardReset => hardReset,
+        ld => ld, ld_w => ld_w, partialSum => PS7, a_out => aout7);
+
+PE8: PE 
+PORT MAP(a_in => aout7, w_in => w23, part_in => PS5,
+        clock => clock, reset => reset, hardReset => hardReset,
+        ld => ld, ld_w => ld_w, partialSum => PS8, a_out => aout8);
+
+PE9: PE 
+PORT MAP(a_in => aout8, w_in => w33, part_in => PS6,
+        clock => clock, reset => reset, hardReset => hardReset,
+        ld => ld, ld_w => ld_w, partialSum => PS9, a_out => aout9);
+
+ y0 <= PS7; 
+ y1 <= PS8;
+ y2 <= PS9;
+
+end arch ; -- arch

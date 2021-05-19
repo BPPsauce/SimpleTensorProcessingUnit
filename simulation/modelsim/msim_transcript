@@ -1,0 +1,300 @@
+# Reading pref.tcl
+# ERROR: No extended dataflow license exists
+# do ShutThePugUp_run_msim_rtl_vhdl.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Copying G:/Quartus/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vcom -93 -work work {D:/JoLi/SFU/FALL 2020 course/ensc 252 real/final project/ShutThePugUp/WRAM.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 20:24:03 on Dec 07,2020
+# vcom -reportprogress 300 -93 -work work D:/JoLi/SFU/FALL 2020 course/ensc 252 real/final project/ShutThePugUp/WRAM.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package altera_mf_components
+# -- Compiling entity WRAM
+# -- Compiling architecture SYN of wram
+# End time: 20:24:03 on Dec 07,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/JoLi/SFU/FALL 2020 course/ensc 252 real/final project/ShutThePugUp/URAM.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 20:24:03 on Dec 07,2020
+# vcom -reportprogress 300 -93 -work work D:/JoLi/SFU/FALL 2020 course/ensc 252 real/final project/ShutThePugUp/URAM.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package altera_mf_components
+# -- Compiling entity URAM
+# -- Compiling architecture SYN of uram
+# End time: 20:24:03 on Dec 07,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/JoLi/SFU/FALL 2020 course/ensc 252 real/final project/ShutThePugUp/PE.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 20:24:03 on Dec 07,2020
+# vcom -reportprogress 300 -93 -work work D:/JoLi/SFU/FALL 2020 course/ensc 252 real/final project/ShutThePugUp/PE.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity MAC
+# -- Compiling architecture behavioral of MAC
+# -- Compiling entity D_FF
+# -- Compiling architecture Behavioral of D_FF
+# -- Compiling entity PE
+# -- Compiling architecture structral of PE
+# End time: 20:24:04 on Dec 07,2020, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/JoLi/SFU/FALL 2020 course/ensc 252 real/final project/ShutThePugUp/MMU.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 20:24:04 on Dec 07,2020
+# vcom -reportprogress 300 -93 -work work D:/JoLi/SFU/FALL 2020 course/ensc 252 real/final project/ShutThePugUp/MMU.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity MMU
+# -- Compiling architecture arch of MMU
+# End time: 20:24:04 on Dec 07,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/JoLi/SFU/FALL 2020 course/ensc 252 real/final project/ShutThePugUp/AU.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 20:24:04 on Dec 07,2020
+# vcom -reportprogress 300 -93 -work work D:/JoLi/SFU/FALL 2020 course/ensc 252 real/final project/ShutThePugUp/AU.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling package systolic_package
+# -- Compiling package body systolic_package
+# -- Loading package systolic_package
+# -- Loading package systolic_package
+# -- Compiling entity AU
+# -- Compiling architecture structural of AU
+# End time: 20:24:04 on Dec 07,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/JoLi/SFU/FALL 2020 course/ensc 252 real/final project/ShutThePugUp/STPU.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 20:24:04 on Dec 07,2020
+# vcom -reportprogress 300 -93 -work work D:/JoLi/SFU/FALL 2020 course/ensc 252 real/final project/ShutThePugUp/STPU.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package systolic_package
+# -- Compiling entity STPU
+# -- Compiling architecture struc of STPU
+# End time: 20:24:04 on Dec 07,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+vcom -reportprogress 300 -work work {D:/JoLi/SFU/FALL 2020 course/ensc 252 real/final project/ShutThePugUp/tb_STPU.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 20:24:14 on Dec 07,2020
+# vcom -reportprogress 300 -work work D:/JoLi/SFU/FALL 2020 course/ensc 252 real/final project/ShutThePugUp/tb_STPU.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package systolic_package
+# -- Compiling entity tb_STPU
+# -- Compiling architecture test of tb_STPU
+# End time: 20:24:14 on Dec 07,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vsim -gui -l msim_transcript work.tb_stpu -t ns
+# vsim -gui -l msim_transcript work.tb_stpu -t ns 
+# Start time: 20:24:23 on Dec 07,2020
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.systolic_package(body)
+# Loading work.tb_stpu(test)
+# Loading work.stpu(struc)
+# Loading altera_mf.altera_mf_components
+# Loading work.wram(syn)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading altera_mf.altera_common_conversion(body)
+# Loading altera_mf.altera_device_families(body)
+# Loading altera_mf.altsyncram(translated)
+# Loading work.uram(syn)
+# Loading work.mmu(arch)
+# Loading work.pe(structral)
+# Loading work.d_ff(behavioral)
+# Loading work.mac(behavioral)
+# Loading work.au(structural)
+add wave sim:/tb_stpu/DUT/*
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: joann  Hostname: BPPSAUCE_LAPTOP  ProcessID: 27120
+#           Attempting to use alternate WLF file "./wlftaqd0se".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftaqd0se
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /tb_stpu/DUT/MatrixShut/PE9/BigMAC
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /tb_stpu/DUT/MatrixShut/PE9/BigMAC
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /tb_stpu/DUT/MatrixShut/PE9/BigMAC
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /tb_stpu/DUT/MatrixShut/PE9/BigMAC
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /tb_stpu/DUT/MatrixShut/PE8/BigMAC
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /tb_stpu/DUT/MatrixShut/PE8/BigMAC
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /tb_stpu/DUT/MatrixShut/PE8/BigMAC
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /tb_stpu/DUT/MatrixShut/PE8/BigMAC
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /tb_stpu/DUT/MatrixShut/PE7/BigMAC
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /tb_stpu/DUT/MatrixShut/PE7/BigMAC
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /tb_stpu/DUT/MatrixShut/PE7/BigMAC
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /tb_stpu/DUT/MatrixShut/PE7/BigMAC
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /tb_stpu/DUT/MatrixShut/PE6/BigMAC
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /tb_stpu/DUT/MatrixShut/PE6/BigMAC
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /tb_stpu/DUT/MatrixShut/PE6/BigMAC
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /tb_stpu/DUT/MatrixShut/PE6/BigMAC
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /tb_stpu/DUT/MatrixShut/PE5/BigMAC
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /tb_stpu/DUT/MatrixShut/PE5/BigMAC
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /tb_stpu/DUT/MatrixShut/PE5/BigMAC
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /tb_stpu/DUT/MatrixShut/PE5/BigMAC
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /tb_stpu/DUT/MatrixShut/PE4/BigMAC
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /tb_stpu/DUT/MatrixShut/PE4/BigMAC
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /tb_stpu/DUT/MatrixShut/PE4/BigMAC
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /tb_stpu/DUT/MatrixShut/PE4/BigMAC
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /tb_stpu/DUT/MatrixShut/PE3/BigMAC
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /tb_stpu/DUT/MatrixShut/PE3/BigMAC
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /tb_stpu/DUT/MatrixShut/PE3/BigMAC
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /tb_stpu/DUT/MatrixShut/PE3/BigMAC
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /tb_stpu/DUT/MatrixShut/PE2/BigMAC
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /tb_stpu/DUT/MatrixShut/PE2/BigMAC
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /tb_stpu/DUT/MatrixShut/PE2/BigMAC
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /tb_stpu/DUT/MatrixShut/PE2/BigMAC
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /tb_stpu/DUT/MatrixShut/PE1/BigMAC
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /tb_stpu/DUT/MatrixShut/PE1/BigMAC
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /tb_stpu/DUT/MatrixShut/PE1/BigMAC
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /tb_stpu/DUT/MatrixShut/PE1/BigMAC
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 1  Instance: /tb_stpu/DUT/MatrixShut/PE3/BigMAC
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 1  Instance: /tb_stpu/DUT/MatrixShut/PE3/BigMAC
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 1  Instance: /tb_stpu/DUT/MatrixShut/PE2/BigMAC
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 1  Instance: /tb_stpu/DUT/MatrixShut/PE2/BigMAC
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 1  Instance: /tb_stpu/DUT/MatrixShut/PE1/BigMAC
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 1  Instance: /tb_stpu/DUT/MatrixShut/PE1/BigMAC
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 3  Instance: /tb_stpu/DUT/MatrixShut/PE7/BigMAC
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 3  Instance: /tb_stpu/DUT/MatrixShut/PE7/BigMAC
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 3  Instance: /tb_stpu/DUT/MatrixShut/PE4/BigMAC
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 3  Instance: /tb_stpu/DUT/MatrixShut/PE4/BigMAC
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 3  Instance: /tb_stpu/DUT/MatrixShut/PE1/BigMAC
+run
+run
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 400 ns  Iteration: 1  Instance: /tb_stpu/DUT/MatrixShut/PE4/BigMAC
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 400 ns  Iteration: 1  Instance: /tb_stpu/DUT/MatrixShut/PE7/BigMAC
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 450 ns  Iteration: 1  Instance: /tb_stpu/DUT/MatrixShut/PE2/BigMAC
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 450 ns  Iteration: 1  Instance: /tb_stpu/DUT/MatrixShut/PE5/BigMAC
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 450 ns  Iteration: 1  Instance: /tb_stpu/DUT/MatrixShut/PE5/BigMAC
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 450 ns  Iteration: 1  Instance: /tb_stpu/DUT/MatrixShut/PE8/BigMAC
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 450 ns  Iteration: 1  Instance: /tb_stpu/DUT/MatrixShut/PE8/BigMAC
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 500 ns  Iteration: 1  Instance: /tb_stpu/DUT/MatrixShut/PE3/BigMAC
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 500 ns  Iteration: 1  Instance: /tb_stpu/DUT/MatrixShut/PE6/BigMAC
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 500 ns  Iteration: 1  Instance: /tb_stpu/DUT/MatrixShut/PE6/BigMAC
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 500 ns  Iteration: 1  Instance: /tb_stpu/DUT/MatrixShut/PE9/BigMAC
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 500 ns  Iteration: 1  Instance: /tb_stpu/DUT/MatrixShut/PE9/BigMAC
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 600 ns  Iteration: 1  Instance: /tb_stpu/DUT/MatrixShut/PE4/BigMAC
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 600 ns  Iteration: 1  Instance: /tb_stpu/DUT/MatrixShut/PE7/BigMAC
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 650 ns  Iteration: 1  Instance: /tb_stpu/DUT/MatrixShut/PE2/BigMAC
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 650 ns  Iteration: 1  Instance: /tb_stpu/DUT/MatrixShut/PE5/BigMAC
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 650 ns  Iteration: 1  Instance: /tb_stpu/DUT/MatrixShut/PE5/BigMAC
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 650 ns  Iteration: 1  Instance: /tb_stpu/DUT/MatrixShut/PE8/BigMAC
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 650 ns  Iteration: 1  Instance: /tb_stpu/DUT/MatrixShut/PE8/BigMAC
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 700 ns  Iteration: 1  Instance: /tb_stpu/DUT/MatrixShut/PE3/BigMAC
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 700 ns  Iteration: 1  Instance: /tb_stpu/DUT/MatrixShut/PE6/BigMAC
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 700 ns  Iteration: 1  Instance: /tb_stpu/DUT/MatrixShut/PE6/BigMAC
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 700 ns  Iteration: 1  Instance: /tb_stpu/DUT/MatrixShut/PE9/BigMAC
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 700 ns  Iteration: 1  Instance: /tb_stpu/DUT/MatrixShut/PE9/BigMAC
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 750 ns  Iteration: 1  Instance: /tb_stpu/DUT/MatrixShut/PE6/BigMAC
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 750 ns  Iteration: 1  Instance: /tb_stpu/DUT/MatrixShut/PE9/BigMAC
+run
+run
+run
+run
+run
+run
+run
+# End time: 22:50:33 on Dec 07,2020, Elapsed time: 2:26:10
+# Errors: 0, Warnings: 75
